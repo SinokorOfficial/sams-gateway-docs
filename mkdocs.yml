@@ -1,0 +1,90 @@
+site_name: SamsGateway · 개발 문서
+site_description: Azure VM 정문 nginx(SamsGateway)의 구성·라우팅·배포·인증서 운영 문서 (공개판)
+site_url: https://sinokorofficial.github.io/sams-gateway-docs/
+
+repo_name: sams-gateway-docs
+repo_url: https://github.com/SinokorOfficial/sams-gateway-docs
+
+docs_dir: docs
+
+# 공개 저장소입니다. 비밀값·내부 IP·호스트명은 문서에 넣지 않습니다 (자리표시자 사용).
+
+nav:
+  - 홈: index.md
+  - 시스템:
+      - 구성 개요: architecture.md
+      - 라우팅 규칙: routing.md
+      - 설계 결정 기록 (ADR): decisions.md
+  - 가이드:
+      - 새 사이트 추가: add-site.md
+  - 운영:
+      - 배포: deployment.md
+      - 인증서: certificates.md
+      - 운영 · 트러블슈팅: operations.md
+  - 변경 이력: changelog.md
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: 다크 모드로
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: 라이트 모드로
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+  font:
+    text: Pretendard
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: ¶
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+copyright: 장금상선 IT팀
